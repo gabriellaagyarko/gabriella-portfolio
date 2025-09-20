@@ -92,7 +92,7 @@ const Navigation = ({ currentPage, setCurrentPage }) => {
 };
 
 // Home Page Component
-const HomePage = () => (
+const HomePage = ({ setCurrentPage }) => (
   <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
     <div className="max-w-7xl mx-auto px-4 py-20">
       <div className="text-center">
@@ -103,10 +103,16 @@ const HomePage = () => (
           A passionate full-stack developer creating beautiful, functional, and user-centered digital experiences.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-          <button className="bg-blue-600 text-white px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-blue-700 transition-colors w-full sm:w-auto">
+          <button 
+            onClick={() => setCurrentPage('projects')}
+            className="bg-blue-600 text-white px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-blue-700 transition-colors w-full sm:w-auto"
+          >
             View My Work
           </button>
-          <button className="border-2 border-blue-600 text-blue-600 px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors w-full sm:w-auto">
+          <button 
+            onClick={() => setCurrentPage('contact')}
+            className="border-2 border-blue-600 text-blue-600 px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors w-full sm:w-auto"
+          >
             Get In Touch
           </button>
         </div>
@@ -589,7 +595,7 @@ const ContactPage = () => {
     {
       icon: () => <span className="text-2xl">📧</span>,
       title: "Email",
-      value: "gabriella.agyarko@example.com",
+      value: "gagyarko@my.centennialcollege.ca",
       description: "Send me an email anytime!"
     },
     {
@@ -887,7 +893,7 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <HomePage />;
+        return <HomePage setCurrentPage={setCurrentPage} />;
       case 'about':
         return <AboutPage />;
       case 'services':
@@ -897,7 +903,7 @@ function App() {
       case 'contact':
         return <ContactPage />;
       default:
-        return <HomePage />;
+        return <HomePage setCurrentPage={setCurrentPage} />;
     }
   };
 
