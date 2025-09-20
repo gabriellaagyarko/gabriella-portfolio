@@ -4,12 +4,13 @@ import { User, Download } from 'lucide-react';
 
 const AboutPage = () => {
   const handleResumeDownload = () => {
-    alert('Resume download would start here. Please add your actual PDF link.');
-    // Example for actual download:
-    // const link = document.createElement('a');
-    // link.href = '/path/to/your/resume.pdf';
-    // link.download = 'John_Doe_Resume.pdf';
-    // link.click();
+    // Create a link element and trigger download
+    const link = document.createElement('a');
+    link.href = '/GABRIELLA AGYARKO_RES.pdf';
+    link.download = 'GABRIELLA AGYARKO_RES.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -27,7 +28,7 @@ const AboutPage = () => {
               <h2 className="text-xl text-blue-600 mb-6">Full-Stack Developer</h2>
               <div className="prose prose-lg text-gray-700 mb-8">
                 <p className="mb-4">
-                  Hello! I'm Gabriella Agyarko, a passionate full-stack developer with over 5 years of experience 
+                  Hello! I'm Gabriella Agyarko, a passionate full-stack developer with over 3 years of experience 
                   creating innovative web and mobile applications. I specialize in React, Node.js, and 
                   modern web technologies, with a keen eye for user experience and clean, maintainable code.
                 </p>
