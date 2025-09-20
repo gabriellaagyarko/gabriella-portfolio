@@ -7,7 +7,7 @@ function HomePage({ setCurrentPage }) {
         <div className="text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
             Welcome to My
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-900"> Portfolio</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-dark-purple via-bright-blue to-dark-blue"> Portfolio</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             I'm a passionate Full-Stack Developer dedicated to creating innovative digital solutions 
@@ -26,13 +26,13 @@ function HomePage({ setCurrentPage }) {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button
               onClick={() => setCurrentPage('about')}
-              className="bg-gradient-to-r from-purple-800 via-blue-600 to-blue-500 text-white px-10 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-dark-purple via-bright-blue to-dark-blue text-white px-10 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Learn More About Me
             </button>
             <button
               onClick={() => setCurrentPage('projects')}
-              className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+              className="border-2 border-bright-blue text-bright-blue px-8 py-4 rounded-lg font-semibold hover:bg-bright-blue hover:text-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
             >
               View My Projects
             </button>
