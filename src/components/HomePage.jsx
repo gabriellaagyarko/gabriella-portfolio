@@ -26,7 +26,7 @@ function HomePage({ setCurrentPage }) {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button
               onClick={() => setCurrentPage('about')}
-              className="bg-gradient-to-r from-blue-600 to-purple-900 text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-purple-800 via-blue-600 to-blue-500 text-white px-10 py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Learn More About Me
             </button>
