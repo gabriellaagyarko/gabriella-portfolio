@@ -1,6 +1,6 @@
 // AboutPage.js
 import React from 'react';
-import { User, Download } from 'lucide-react';
+import { Download } from 'lucide-react';
 
 const AboutPage = () => {
   const handleResumeDownload = () => {
@@ -18,14 +18,18 @@ const AboutPage = () => {
       <div className="max-w-4xl mx-auto px-4">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="md:flex">
-            <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-purple-600 p-8 flex items-center justify-center">
-              <div className="w-48 h-48 bg-white/20 rounded-full flex items-center justify-center">
-                <User size={80} className="text-white" />
+            <div className="md:w-1/3 bg-gradient-to-br from-dark-purple via-bright-blue to-dark-blue p-8 flex items-center justify-center">
+              <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-2xl border-4 border-white/30">
+                <img 
+                  src="/gabriella-photo.jpg" 
+                  alt="Gabriella Agyarko - Full-Stack Developer" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             <div className="md:w-2/3 p-8">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Gabriella Agyarko</h1>
-              <h2 className="text-xl text-blue-600 mb-6">Full-Stack Developer</h2>
+              <h2 className="text-xl text-bright-blue mb-6">Full-Stack Developer</h2>
               <div className="prose prose-lg text-gray-700 mb-8">
                 <p className="mb-4">
                   Hello! I'm Gabriella Agyarko, a passionate full-stack developer with over 3 years of experience 
@@ -46,7 +50,7 @@ const AboutPage = () => {
                 <h3 className="text-lg font-semibold text-gray-800 mb-3">Core Skills</h3>
                 <div className="flex flex-wrap gap-2">
                   {['JavaScript', 'React', 'Node.js', 'Python', 'MongoDB', 'PostgreSQL', 'AWS', 'Docker'].map((skill) => (
-                    <span key={skill} className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">
+                    <span key={skill} className="px-3 py-1 bg-bright-blue-100 text-bright-blue-600 rounded-full text-sm">
                       {skill}
                     </span>
                   ))}
@@ -55,7 +59,7 @@ const AboutPage = () => {
               <div className="border-t border-gray-200 pt-6">
                 <button 
                   onClick={handleResumeDownload}
-                  className="flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-dark-purple to-bright-blue text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
                   <Download size={20} />
                   <span>Download Resume (PDF)</span>
