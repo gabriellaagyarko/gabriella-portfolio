@@ -133,7 +133,7 @@ const ContactPage = () => {
     {
       icon: () => <span className="text-2xl">💼</span>,
       name: "LinkedIn",
-      url: "https://linkedin.com/in/gabriellaagyarko",
+      url: "https://www.linkedin.com/in/gabriella-agyarko-3632671b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       username: "Gabriella Agyarko"
     }
   ];
