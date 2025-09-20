@@ -111,7 +111,7 @@ const ContactPage = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "john.doe@example.com",
+      value: "gabriella.agyarko@example.com",
       description: "Send me an email anytime!"
     },
     {
@@ -139,45 +139,45 @@ const ContactPage = () => {
     {
       icon: Github,
       name: "GitHub",
-      url: "https://github.com/johndoe",
-      username: "@johndoe"
+      url: "https://github.com/gabriellaagyarko",
+      username: "@gabriellaagyarko"
     },
     {
       icon: Linkedin,
       name: "LinkedIn",
-      url: "https://linkedin.com/in/johndoe",
-      username: "John Doe"
+      url: "https://linkedin.com/in/gabriellaagyarko",
+      username: "Gabriella Agyarko"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-20">
-      <div className="max-6xl mx-auto px-4">
+    <div className="min-h-screen bg-gray-50 py-8 lg:py-20">
+      <div className="max-w-6xl mx-auto px-4">
         {/* Page Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-8 lg:mb-12">
+          <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h1>
+          <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
             Let's discuss your next project and how I can help bring your ideas to life. 
             I'm always excited to work on new challenges and collaborate with great people.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Contact Information Panel */}
-          <div className="space-y-8">
+          <div className="space-y-4 lg:space-y-6">
             {/* Main Contact Card */}
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
-              <h2 className="text-3xl font-bold mb-8">Contact Information</h2>
+            <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-6 lg:p-8 text-white">
+              <h2 className="text-2xl lg:text-3xl font-bold mb-6 lg:mb-8">Contact Information</h2>
               
-              <div className="space-y-6">
+              <div className="space-y-4 lg:space-y-6">
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;
                   return (
                     <div key={index} className="flex items-start">
-                      <IconComponent size={24} className="mr-4 mt-1 flex-shrink-0" />
+                      <IconComponent size={20} className="mr-3 mt-1 flex-shrink-0" />
                       <div>
                         <h3 className="font-semibold mb-1">{info.title}</h3>
-                        <p className="text-lg mb-1">{info.value}</p>
+                        <p className="text-base lg:text-lg mb-1">{info.value}</p>
                         <p className="text-sm opacity-80">{info.description}</p>
                       </div>
                     </div>
@@ -229,8 +229,8 @@ const ContactPage = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h2>
+          <div className="bg-white rounded-2xl shadow-xl p-6 lg:p-8">
+            <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h2>
             
             {showSuccess && (
               <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mb-6 flex items-center">
@@ -239,9 +239,10 @@ const ContactPage = () => {
               </div>
             )}
 
-            <div className="space-y-6">
-              {/* Name Fields */}
-              <div className="grid md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit}>
+              <div className="space-y-6">
+                {/* Name Fields */}
+                <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
                     First Name *
@@ -252,10 +253,10 @@ const ContactPage = () => {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
+                    className={`w-full px-3 lg:px-4 py-2 lg:py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
                       errors.firstName ? 'border-red-500' : 'border-gray-300'
                     }`}
-                    placeholder="John"
+                    placeholder="Gabriella"
                   />
                   {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
                 </div>
@@ -270,10 +271,10 @@ const ContactPage = () => {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
+                    className={`w-full px-3 lg:px-4 py-2 lg:py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
                       errors.lastName ? 'border-red-500' : 'border-gray-300'
                     }`}
-                    placeholder="Doe"
+                    placeholder="Agyarko"
                   />
                   {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>}
                 </div>
@@ -291,10 +292,10 @@ const ContactPage = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
+                    className={`w-full px-3 lg:px-4 py-2 lg:py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
                       errors.email ? 'border-red-500' : 'border-gray-300'
                     }`}
-                    placeholder="john@example.com"
+                    placeholder="gabriella@example.com"
                   />
                   {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
@@ -396,38 +397,39 @@ const ContactPage = () => {
                 {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
               </div>
 
-              {/* Submit Button */}
-              <button
-                onClick={handleSubmit}
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                    <span>Sending...</span>
-                  </>
-                ) : (
-                  <>
-                    <Send size={20} />
-                    <span>Send Message</span>
-                  </>
-                )}
-              </button>
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send size={20} />
+                      <span>Send Message</span>
+                    </>
+                  )}
+                </button>
 
-              {/* Form Note */}
-              <p className="text-sm text-gray-500 text-center">
-                * Required fields. I typically respond within 24 hours.
-              </p>
-            </div>
+                {/* Form Note */}
+                <p className="text-sm text-gray-500 text-center">
+                  * Required fields. I typically respond within 24 hours.
+                </p>
+              </div>
+            </form>
           </div>
         </div>
 
         {/* FAQ Section */}
-        <div className="mt-20">
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Frequently Asked Questions</h3>
-            <div className="grid md:grid-cols-2 gap-8">
+        <div className="mt-8 lg:mt-12">
+          <div className="bg-white rounded-2xl shadow-lg p-6 lg:p-8">
+            <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center mb-6 lg:mb-8">Frequently Asked Questions</h3>
+            <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
               <div>
                 <h4 className="font-semibold text-gray-800 mb-2">How quickly can you start my project?</h4>
                 <p className="text-gray-600 text-sm">I'm currently available for new projects and can typically start within 1-2 weeks depending on the scope.</p>
@@ -449,3 +451,7 @@ const ContactPage = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+export default ContactPage;

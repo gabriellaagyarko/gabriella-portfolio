@@ -4,45 +4,52 @@ import React from 'react';
 const HomePage = ({ setCurrentPage }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      <div className="max-w-7xl mx-auto px-4 py-20">
-        <div className="text-center">
+      {/* Main Hero Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="pt-20 pb-16 text-center lg:pt-32">
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+          <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-tight text-slate-900 sm:text-7xl">
             Welcome to My
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> Portfolio</span>
+            <span className="relative whitespace-nowrap text-blue-600">
+              <span className="relative"> Portfolio</span>
+            </span>
           </h1>
           
           {/* Subtitle */}
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
             I'm a passionate Full-Stack Developer dedicated to creating innovative digital solutions 
             that make a difference. Let's build something amazing together.
           </p>
           
-          {/* Mission Statement Section */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 mb-12 max-w-4xl mx-auto shadow-xl">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Mission Statement</h2>
-            <p className="text-gray-700 leading-relaxed">
+          {/* Call-to-Action Buttons */}
+          <div className="mt-10 flex justify-center gap-x-6">
+            <button
+              onClick={() => setCurrentPage('projects')}
+              className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
+            >
+              View My Work
+            </button>
+            <button
+              onClick={() => setCurrentPage('contact')}
+              className="group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300"
+            >
+              Get In Touch
+            </button>
+          </div>
+        </div>
+
+        {/* Mission Statement Section */}
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              Mission Statement
+            </h2>
+            <p className="mt-6 text-xl leading-8 text-slate-600">
               To leverage cutting-edge technology and creative problem-solving to develop scalable, 
               user-centric applications that drive business success and enhance user experiences. 
               I believe in continuous learning, collaborative development, and delivering excellence 
               in every project.
             </p>
-          </div>
-
-          {/* Call-to-Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => setCurrentPage('about')}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg"
-            >
-              Learn More About Me
-            </button>
-            <button
-              onClick={() => setCurrentPage('projects')}
-              className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all transform hover:scale-105"
-            >
-              View My Projects
-            </button>
           </div>
         </div>
       </div>
